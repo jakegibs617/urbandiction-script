@@ -5,7 +5,7 @@ require 'pry'
 require 'csv'
 require 'rest-client'
 
-puts "input word to read definition"
+puts "input word to read definition:"
 word = gets
 url = "http://api.urbandictionary.com/v0/define?term=#{word}"
 
@@ -22,12 +22,11 @@ for x in 0...total
 	def_array << "#{x + 1}: " + parse_page["list"][x]["definition"]
 end
 
-puts def_array
+for x in 0...total
+	puts def_array[x]
+	sleep 2
+	puts " "
+	puts " --"
+	puts " "
+end
 
-puts "which definition do you agree with?"
-input = gets
-
-# move the input index of array to the front
-# add text that says "user promoted"
-
-# Pry.start(binding)
