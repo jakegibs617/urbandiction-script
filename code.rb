@@ -19,9 +19,15 @@ def_array = []
 total = parse_page["list"].length
 
 for x in 0...total
-	def_array << parse_page["list"][x]["definition"]
+	def_array << "#{x + 1}: " + parse_page["list"][x]["definition"]
 end
 
 puts def_array
+
+puts "which definition do you agree with?"
+input = gets
+
+# move the input index of array to the front
+# add text that says "user promoted"
 
 # Pry.start(binding)
